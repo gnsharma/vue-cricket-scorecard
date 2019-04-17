@@ -20,30 +20,32 @@
       </li>
     </ul>
 
-    <div class="bowler">
-      <p class="text-left m-3"> Bowler </p>
-
-      This over:
-      <span v-for="(item, index) in thisOver" v-bind:key="index">
-        {{ item }}
-      </span>
-    </div>
+    <Bowler />
   </div>
 </template>
 
 <script>
+import Bowler from "./Bowler";
+
 export default {
   name: "ScoreCard",
-  props: {
-    firstTeam: String,
-    secondTeam: String,
-    score: Number,
-    wickets: Number,
-    thisOver: Array
+  components: {
+    Bowler
+  },
+  computed: {
+    firstTeam() {
+      return this.$store.state.firstTeam;
+    },
+    score() {
+      return this.$store.state.score;
+    },
+    wickets() {
+      return this.$store.state.wickets;
+    }
   },
   methods: {
     addScore(score) {
-      this.$emit('add-score', score);
+      this.$store.commit('addScoreMutation', score);
     },
   }
 
