@@ -3,7 +3,6 @@
     <ScoreCard
       v-bind="inningsData"
       v-on:add-score="addScore($event)"
-      v-on:add-wicket="addWicket()"
     />
   </div>
 </template>
