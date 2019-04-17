@@ -25,10 +25,13 @@
 </template>
 
 <script>
-import Bowler from './Bowler';
+import Bowler from './Bowler.vue';
 
 export default {
   name: "ScoreCard",
+  components: {
+    Bowler
+  },
   props: {
     firstTeam: String,
     secondTeam: String,
