@@ -39,8 +39,6 @@ export default {
   },
   methods: {
     addScore(score) {
-      // eslint:disable-next-line:no-debugger
-      debugger;
       this.$emit('add-score', score);
     },
   }

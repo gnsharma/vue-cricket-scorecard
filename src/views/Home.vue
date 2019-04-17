@@ -32,8 +32,6 @@ export default {
   },
   methods: {
     addScore(score) {
-      // eslint:disable-next-line:no-debugger
-      debugger;
       this.inningsData.score += parseInt(score);
       Vue.set(
         this.inningsData.thisOver,
