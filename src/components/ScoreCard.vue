@@ -1,5 +1,12 @@
 <template>
   <div class="hello">
+    <button v-on:click="addScore('0')"> 0 </button>
+    <button v-on:click="addScore('1')"> 1 </button>
+    <button v-on:click="addScore('2')"> 2 </button>
+    <button v-on:click="addScore('3')"> 3 </button>
+    <button v-on:click="addScore('4')"> 4 </button>
+    <button v-on:click="addScore('6')"> 6 </button>
+    <button v-on:click="addWicket()"> W </button>
     <div>
       {{ firstTeam }}: {{ score }}/{{ wickets }}
       {{ secondTeam }}
@@ -23,7 +30,16 @@ export default {
     secondTeam: String,
     score: Number,
     wickets: Number
+  },
+  methods: {
+    addScore(score) {
+      this.$emit('add-score', score);
+    },
+    addWicket() {
+      this.$emit('add-wicket');
+    },
   }
+
 };
 </script>
 
