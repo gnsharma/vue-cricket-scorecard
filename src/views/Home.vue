@@ -41,6 +41,11 @@ export default {
         parseInt(score)
       );
     },
+  },
+  provide() {
+    return {
+      thisOver: this.inningsData.thisOver
+    };
   }
 };
 </script>

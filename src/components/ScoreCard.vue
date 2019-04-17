@@ -20,20 +20,18 @@
       </li>
     </ul>
 
-    <div class="bowler">
-      <p class="text-left m-3"> Bowler </p>
-
-      This over:
-      <span v-for="(item, index) in thisOver" v-bind:key="index">
-        {{ item }}
-      </span>
-    </div>
+    <Bowler />
   </div>
 </template>
 
 <script>
+import Bowler from './Bowler';
+
 export default {
   name: "ScoreCard",
+  components: {
+    Bowler
+  },
   props: {
     firstTeam: String,
     secondTeam: String,
