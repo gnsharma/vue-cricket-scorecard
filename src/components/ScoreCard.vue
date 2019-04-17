@@ -6,10 +6,8 @@
     <button v-on:click="addScore('3')"> 3 </button>
     <button v-on:click="addScore('4')"> 4 </button>
     <button v-on:click="addScore('6')"> 6 </button>
-    <!-- <button v-on:click="addWicket()"> W </button> -->
     <div>
       {{ firstTeam }}: {{ score }}/{{ wickets }}
-      <!-- {{ secondTeam }} -->
     </div>
     <div>
       {{ firstTeam }} Innings
@@ -19,6 +17,13 @@
         <router-link v-bind:to="'/player/batter ' + i">Batter {{ i }}</router-link>
       </li>
     </ul>
+
+    <div>
+      This over:
+      <span v-for="(item, index) in thisOver" v-bind:key="index">
+        {{ item }}
+      </span>
+    </div>
   </div>
 </template>
 
@@ -29,15 +34,15 @@ export default {
     firstTeam: String,
     secondTeam: String,
     score: Number,
-    wickets: Number
+    wickets: Number,
+    thisOver: Array
   },
   methods: {
     addScore(score) {
+      // eslint:disable-next-line:no-debugger
+      debugger;
       this.$emit('add-score', score);
     },
-    // addWicket() {
-    //   this.$emit('add-wicket');
-    // },
   }
 
 };
