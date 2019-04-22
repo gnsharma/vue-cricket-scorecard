@@ -4,7 +4,6 @@
 
     <ScoreCard
       v-bind="inningsData"
-      v-on:add-score="addScore($event)"
     />
   </div>
 </template>
@@ -31,6 +30,11 @@ export default {
     return {
       inningsData
     };
+  },
+  created: function() {
+    this.$root.$on('add-score', ($event) => {
+      this.addScore($event);
+    });
   },
   methods: {
     addScore(score) {

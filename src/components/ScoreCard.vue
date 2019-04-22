@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     addScore(score) {
-      this.$emit('add-score', score);
+      this.$root.$emit('add-score', score);
     },
   }
 
