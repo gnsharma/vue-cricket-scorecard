@@ -28,4 +28,19 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+div.home {
+  border: 1px solid red;
+  margin: 0 50px;
+}
+
+div.scorecard {
+  border: 1px solid green;
+  margin: 20px;
+}
+
+div.bowler {
+  border: 1px solid black;
+  margin: 20px;
+}
 </style>

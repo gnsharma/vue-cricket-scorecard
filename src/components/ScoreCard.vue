@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="scorecard">
     <button v-on:click="addScore('0')"> 0 </button>
     <button v-on:click="addScore('1')"> 1 </button>
     <button v-on:click="addScore('2')"> 2 </button>
@@ -18,7 +18,7 @@
       </li>
     </ul>
 
-    <div>
+    <div class="bowler">
       This over:
       <span v-for="(item, index) in thisOver" v-bind:key="index">
         {{ item }}
