@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bowler">
       This over:
       <span v-for="(item, index) in thisOver" v-bind:key="index">
         {{ item }}
