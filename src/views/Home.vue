@@ -6,6 +6,8 @@
       v-bind="inningsData"
       v-on:add-score="addScore($event)"
     />
+
+    <Celebration ref="celebration-ref" />
   </div>
 </template>
 
@@ -13,6 +15,7 @@
 // @ is an alias to /src
 import Vue from 'vue';
 import ScoreCard from "@/components/ScoreCard.vue";
+import Celebration from "@/components/Celebration.vue";
 
 const inningsData = {
   firstTeam: "Delhi Capitals",
@@ -25,6 +28,7 @@ const inningsData = {
 export default {
   name: "home",
   components: {
+    Celebration,
     ScoreCard
   },
   data() {
@@ -34,6 +38,9 @@ export default {
   },
   methods: {
     addScore(score) {
+      if (parseInt(score) === 6) this.$refs["celebration-ref"].showDiv();
+      else this.$refs["celebration-ref"].hideDiv();
+
       this.inningsData.score += parseInt(score);
       Vue.set(
         this.inningsData.thisOver,
