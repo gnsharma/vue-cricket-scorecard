@@ -1,5 +1,7 @@
 <template>
   <div class="celebration" v-if="show">
+    <p class="text-left m-3"> Celebration </p>
+
     Yay!!! You just hit a six. Smashed it!!!
   </div>
 </template>

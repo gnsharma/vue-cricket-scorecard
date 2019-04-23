@@ -45,7 +45,14 @@ div.bowler {
 }
 
 div.celebration {
+  border: 1px solid black;
+  margin: 20px;
   font-size: xx-large;
   font-weight: 900;
+}
+
+div.celebration > p {
+  font-size: medium;
+  font-weight: normal;
 }
 </style>
