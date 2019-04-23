@@ -1,11 +1,13 @@
 <template>
   <div class="scorecard">
-    <button v-on:click="addScore('0')"> 0 </button>
-    <button v-on:click="addScore('1')"> 1 </button>
-    <button v-on:click="addScore('2')"> 2 </button>
-    <button v-on:click="addScore('3')"> 3 </button>
-    <button v-on:click="addScore('4')"> 4 </button>
-    <button v-on:click="addScore('6')"> 6 </button>
+    <p class="text-left m-3"> Scorecard </p>
+
+    <button class="btn btn-primary m-1" v-on:click="addScore('0')"> 0 </button>
+    <button class="btn btn-primary m-1" v-on:click="addScore('1')"> 1 </button>
+    <button class="btn btn-primary m-1"  v-on:click="addScore('2')"> 2 </button>
+    <button class="btn btn-primary m-1" v-on:click="addScore('3')"> 3 </button>
+    <button class="btn btn-primary m-1" v-on:click="addScore('4')"> 4 </button>
+    <button class="btn btn-primary m-1" v-on:click="addScore('6')"> 6 </button>
     <div>
       {{ firstTeam }}: {{ score }}/{{ wickets }}
     </div>
@@ -19,6 +21,8 @@
     </ul>
 
     <div class="bowler">
+      <p class="text-left m-3"> Bowler </p>
+
       This over:
       <span v-for="(item, index) in thisOver" v-bind:key="index">
         {{ item }}

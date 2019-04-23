@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <p class="text-left m-3"> Home </p>
+
     <ScoreCard
       v-bind="inningsData"
       v-on:add-score="addScore($event)"
