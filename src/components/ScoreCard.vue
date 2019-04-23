@@ -1,11 +1,11 @@
 <template>
   <div class="hello">
-    <button v-on:click="addScore('0')"> 0 </button>
-    <button v-on:click="addScore('1')"> 1 </button>
-    <button v-on:click="addScore('2')"> 2 </button>
-    <button v-on:click="addScore('3')"> 3 </button>
-    <button v-on:click="addScore('4')"> 4 </button>
-    <button v-on:click="addScore('6')"> 6 </button>
+    <button
+      v-for="i in 7"
+      v-bind:key="i-1"
+      v-on:click="addScore(i-1)">
+    {{i-1}}
+    </button>
     <div>
       {{ firstTeam }}: {{ score }}/{{ wickets }}
     </div>
@@ -14,10 +14,10 @@
     </div>
     <ul>
       <li v-for="i in 2" v-bind:key="i">
-        <router-link v-bind:to="'/player/batter ' + i">Batter {{ i }}</router-link>
+        <router-link v-bind:to="'/player/' + batters[i-1]"> {{ batters[i-1] }}</router-link>
+         {{getBatterScore(i)}}
       </li>
     </ul>
-
     <div>
       This over:
       <span v-for="(item, index) in thisOver" v-bind:key="index">
@@ -37,10 +37,24 @@ export default {
     wickets: Number,
     thisOver: Array
   },
+  data: function() {
+    return {
+      batters: ['Rishabh Pant', 'Shikhar Dhawan'],
+      countBallBowled: 0,
+    }
+  },
   methods: {
     addScore(score) {
-      this.$emit('add-score', score);
+      this.countBallBowled += 1;
+      if (this.countBallBowled > 6) {
+        alert('Game over. Total score is '+ this.score);
+      } else {
+        this.$emit('add-score', score);
+      }
     },
+    getBatterScore(i){
+      return (i%2) ? Math.floor(this.score/2) : Math.ceil(this.score/2);
+    }
   }
 
 };
@@ -56,6 +70,9 @@ ul {
   padding: 0;
 }
 a {
-  color: #42b983;
+  color: #5548f5;
+}
+button{
+  margin: 2px 2px 20px 2px;
 }
 </style>
