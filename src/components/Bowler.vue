@@ -1,10 +1,6 @@
 <template>
-<<<<<<< HEAD
-    <div class="Bowler">
-        <p class="text-left m-3"> Bowler </p>
-=======
     <div class="bowler">
->>>>>>> rebase and fix issues
+        <p class="text-left m-3"> Bowler </p>
         This over:
         <span v-for="(item, index) in thisOver" v-bind:key="index">
             {{ item }}
